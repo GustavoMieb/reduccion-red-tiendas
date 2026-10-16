@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reducción de red de tiendas</title>
+<!-- Archivo generado por src/generar_proyecto.py. No editar a mano: modificar src/plantilla/ y regenerar. -->
+<style>/*__LEAFLET_CSS__*/</style>
+<style>/*__STYLES__*/</style>
+</head>
+<body>
+<header class="pageHeader">
+  <div class="wrap">
+    <p class="eyebrow">Ciencia de Datos en Marketing · Análisis geoespacial · Propuesta exploratoria</p>
+    <h1>¿Cuántas tiendas podemos reducir sin alejarnos de la red actual?</h1>
+    <p class="lead">Priorizamos las tiendas de mayor volumen y marcamos como <span class="tag tagCand">candidata a cierre</span>
+      a toda tienda que tenga otra <span class="tag tagKept">conservada</span> dentro del radio del escenario.
+      Así comparamos cuánto se reduce la red frente al volumen histórico que se conserva.</p>
+  </div>
+</header>
+
+<main>
+  <section class="controls wrap" aria-label="Controles del análisis">
+    <div class="control">
+      <span class="controlLabel" id="scenarioLabel">Escenario (radio)</span>
+      <div class="segmented" role="radiogroup" aria-labelledby="scenarioLabel" id="scenarioButtons"></div>
+    </div>
+    <div class="control">
+      <label class="controlLabel" for="stateSelect">Estado</label>
+      <select id="stateSelect"></select>
+    </div>
+    <div class="control">
+      <span class="controlLabel" id="viewLabel">Mostrar en mapa</span>
+      <div class="segmented" role="radiogroup" aria-labelledby="viewLabel" id="viewButtons"></div>
+    </div>
+    <form class="control" id="searchForm" autocomplete="off">
+      <label class="controlLabel" for="searchInput">Buscar por ID</label>
+      <div class="searchBox">
+        <input id="searchInput" type="search" inputmode="numeric" placeholder="p. ej. 300157703">
+        <button type="submit">Ir</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="kpiArea wrap" aria-live="polite">
+    <div class="scopeLine"><span id="scopeText"></span><span id="scenarioNote" class="muted"></span></div>
+    <div class="kpis">
+      <div class="kpi kpiKept"><span class="kpiLabel">Tiendas conservadas</span><span class="kpiValue" id="kpiKept"></span><span class="kpiSub" id="kpiKeptSub"></span></div>
+      <div class="kpi kpiCand"><span class="kpiLabel">Candidatas a cierre</span><span class="kpiValue" id="kpiCand"></span><span class="kpiSub" id="kpiCandSub"></span></div>
+      <div class="kpi"><span class="kpiLabel">Reducción de tiendas</span><span class="kpiValue" id="kpiRed"></span><span class="kpiSub" id="kpiRedSub"></span></div>
+      <div class="kpi"><span class="kpiLabel">Volumen histórico conservado</span><span class="kpiValue" id="kpiVol"></span><span class="kpiSub" id="kpiVolSub"></span></div>
+    </div>
+  </section>
+
+  <section class="mapArea" aria-label="Mapa de tiendas">
+    <div id="map"></div>
+    <div id="mapNotice" class="mapNotice" hidden></div>
+  </section>
+  <p class="wrap mapHelp muted">Pasa el cursor (o toca) una tienda para ver sus datos. Haz clic en una candidata para ver la tienda
+    conservada que la cubre y la distancia; en una conservada, para ver las candidatas que tiene asignadas.</p>
+
+  <section class="wrap section" id="compare">
+    <h2>Comparación de escenarios</h2>
+    <p class="sectionLead" id="compareScope"></p>
+    <div class="tableScroll">
+      <table class="dataTable" id="compareTable"></table>
+    </div>
+    <div class="compareGrid">
+      <figure class="chartBox">
+        <figcaption><strong>Volumen histórico conservado (% del volumen elegible)</strong>
+          <span class="muted">Heurística con proximidad vs. mismas N tiendas elegidas solo por volumen</span></figcaption>
+        <div class="chartLegend">
+          <span><i class="swatch swatchKept"></i>Heurística (con proximidad)</span>
+          <span><i class="swatch swatchTop"></i>Top N por volumen (sin proximidad)</span>
+        </div>
+        <div id="chart"></div>
+      </figure>
+      <div class="note" id="compareNote"></div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="method">
+    <h2>Método y limitaciones</h2>
+    <div class="methodGrid">
+      <div>
+        <h3>Cómo se clasifica cada tienda</h3>
+        <ol>
+          <li>Se ordenan las tiendas elegibles por volumen descendente (empate: ID ascendente).</li>
+          <li>Se recorre la lista: una tienda se <strong>conserva</strong> si no hay ninguna tienda ya conservada dentro del radio; si la hay, queda como <strong>candidata a cierre</strong>.</li>
+          <li>Al terminar, cada candidata se asigna a la conservada más cercana. Por construcción siempre hay una dentro del radio; las tiendas aisladas se conservan.</li>
+          <li>Distancias en línea recta sobre la superficie terrestre (haversine, radio medio 6,371 km). Se permiten asignaciones entre estados y se señalan.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Cómo leer los resultados</h3>
+        <ul>
+          <li>Es una <strong>heurística voraz</strong> que prioriza volumen: es sencilla y explicable, pero no garantiza el óptimo global.</li>
+          <li><strong>Volumen histórico conservado</strong> = suma del volumen de las tiendas seleccionadas. No es una predicción de ventas ni supone que los clientes de una tienda cerrada se muevan a otra.</li>
+          <li><strong>Cobertura</strong> aquí significa proximidad a las ubicaciones originales elegibles; no equivale a cobertura de población, clientes o territorio.</li>
+          <li>No se elige un escenario “ganador”: la decisión depende de cuánta reducción y cuánta pérdida de volumen se aceptan.</li>
+          <li>Estado y municipio provienen de un cruce punto-en-polígono con los contornos originales; los contornos del mapa están simplificados solo para dibujarlos.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="storesSection">
+    <div class="sectionHead">
+      <div>
+        <h2>Tiendas</h2>
+        <p class="sectionLead" id="storesScope"></p>
+      </div>
+      <button type="button" class="btnPrimary" id="downloadBtn">Descargar CSV</button>
+    </div>
+    <div class="tableTools">
+      <input type="search" id="tableSearch" placeholder="Filtrar por ID o municipio">
+      <span class="muted" id="tableCount"></span>
+    </div>
+    <div class="tableScroll">
+      <table class="dataTable storesTable" id="storesTable"></table>
+    </div>
+    <div class="pager" id="pager"></div>
+  </section>
+
+  <section class="wrap section" id="reviewSection">
+    <details id="reviewDetails">
+      <summary><span id="reviewSummary">Registros que necesitan revisión</span></summary>
+      <p class="sectionLead">Los registros <strong>excluidos</strong> no participan en la heurística (no se corrigen coordenadas por intuición).
+        Las <strong>observaciones</strong> no excluyen la tienda, pero conviene validarlas con el área responsable.
+        “Sin asignar” por falta de contornos es distinto de una ubicación inválida.</p>
+      <div class="tableTools">
+        <div class="segmented small" id="reviewButtons"></div>
+      </div>
+      <div class="tableScroll">
+        <table class="dataTable reviewTable" id="reviewTable"></table>
+      </div>
+      <details class="subDetails">
+        <summary>Contornos cargados y comprobaciones de reconciliación</summary>
+        <div class="twoCol">
+          <div><h3>Contornos</h3><ul id="contourList" class="plainList"></ul></div>
+          <div><h3>Comprobaciones</h3><ul id="checkList" class="plainList"></ul></div>
+        </div>
+      </details>
+    </details>
+  </section>
+</main>
+
+<footer class="wrap pageFooter muted">
+  <p>Generado el <span id="generatedAt"></span> con <code>src/generar_proyecto.py</code>. Los datos se incrustan en este archivo; el mapa base
+    (© Esri; datos de HERE, Garmin y OpenStreetMap) requiere internet y, si no carga, los puntos y contornos siguen funcionando.</p>
+</footer>
+
+<div id="chartTip" class="chartTip" hidden></div>
+
+<script type="application/json" id="appData">__DATA_JSON__</script>
+<script type="application/json" id="statesData">__STATES_GEOJSON__</script>
+<script type="application/json" id="munisData">__MUNIS_GEOJSON__</script>
+<script>/*__LEAFLET_JS__*/</script>
+<script>/*__APP_JS__*/</script>
+</body>
+</html>

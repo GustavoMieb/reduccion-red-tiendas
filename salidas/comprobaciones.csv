@@ -1,0 +1,21 @@
+﻿comprobacion,resultado
+Elegibles + excluidos = total de registros,OK
+Volumen elegible + volumen excluido = volumen total,OK
+500 m: cada tienda elegible tiene exactamente una clasificación,OK
+500 m: conservadas + candidatas = elegibles,OK
+500 m: volumen conservado + candidatas = volumen elegible,OK
+500 m: toda candidata tiene una conservada dentro de 500 m,OK
+500 m: toda candidata está asignada a una tienda conservada,OK
+500 m: ninguna pareja de conservadas está dentro de 500 m,OK
+1 km: cada tienda elegible tiene exactamente una clasificación,OK
+1 km: conservadas + candidatas = elegibles,OK
+1 km: volumen conservado + candidatas = volumen elegible,OK
+1 km: toda candidata tiene una conservada dentro de 1 km,OK
+1 km: toda candidata está asignada a una tienda conservada,OK
+1 km: ninguna pareja de conservadas está dentro de 1 km,OK
+2 km: cada tienda elegible tiene exactamente una clasificación,OK
+2 km: conservadas + candidatas = elegibles,OK
+2 km: volumen conservado + candidatas = volumen elegible,OK
+2 km: toda candidata tiene una conservada dentro de 2 km,OK
+2 km: toda candidata está asignada a una tienda conservada,OK
+2 km: ninguna pareja de conservadas está dentro de 2 km,OK

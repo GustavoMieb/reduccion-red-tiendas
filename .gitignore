@@ -1,0 +1,18 @@
+# Contornos geográficos (~165 MB): se colocan localmente en datos/contornos/
+datos/contornos/
+
+# Material de clase (no se versiona)
+material_clase/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

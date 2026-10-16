@@ -1,0 +1,215 @@
+/* Paleta: verde azulado = conservar, naranja = candidata a cierre, gris = información secundaria.
+   Colores validados para separación con daltonismo (protan/deutan/tritan). */
+:root {
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --ink: #1d2730;
+  --ink2: #4a5561;
+  --muted: #6b7682;
+  --line: #e2e5e8;
+  --line2: #eef0f2;
+  --kept: #00918f;
+  --keptInk: #00706e;
+  --keptSoft: #e3f3f2;
+  --cand: #e06c00;
+  --candInk: #a64f00;
+  --candSoft: #fdeedf;
+  --gray: #8a94a0;
+  --graySoft: #eef0f2;
+  --focus: #1d4ed8;
+  --radius: 10px;
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.55 var(--font);
+}
+.wrap { max-width: 1280px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.muted { color: var(--muted); }
+h1, h2, h3 { line-height: 1.25; margin: 0; }
+h1 { font-size: clamp(1.45rem, 1.1rem + 1.2vw, 2rem); font-weight: 650; letter-spacing: -0.01em; max-width: 34ch; }
+h2 { font-size: 1.25rem; font-weight: 650; }
+h3 { font-size: 0.95rem; font-weight: 650; margin-bottom: 6px; }
+code { font-family: Consolas, "SFMono-Regular", monospace; font-size: 0.9em; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Encabezado */
+.pageHeader { padding: 28px 0 14px; }
+.eyebrow { margin: 0 0 6px; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.02em; }
+.lead { margin: 10px 0 0; color: var(--ink2); max-width: 78ch; }
+.tag { display: inline-block; padding: 0 7px; border-radius: 999px; font-size: 0.86em; font-weight: 600; white-space: nowrap; }
+.tagKept { background: var(--keptSoft); color: var(--keptInk); }
+.tagCand { background: var(--candSoft); color: var(--candInk); }
+.tagGray { background: var(--graySoft); color: var(--ink2); }
+
+/* Controles */
+.controls { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: flex-end; padding-top: 10px; padding-bottom: 14px; }
+.control { display: flex; flex-direction: column; gap: 5px; margin: 0; }
+.controlLabel { font-size: 0.78rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.segmented { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 9px; padding: 3px; gap: 2px; }
+.segmented button {
+  border: 0; background: transparent; padding: 6px 13px; border-radius: 6px; cursor: pointer;
+  color: var(--ink2); font-weight: 550; white-space: nowrap; min-height: 34px;
+}
+.segmented button:hover { background: var(--line2); }
+.segmented button[aria-checked="true"] { background: var(--ink); color: #fff; }
+.segmented.small button { padding: 4px 10px; min-height: 30px; font-size: 0.88rem; }
+select, .searchBox input, .tableTools input {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-height: 40px;
+}
+select { min-width: 210px; cursor: pointer; }
+.searchBox { display: flex; gap: 6px; }
+.searchBox input { width: 170px; }
+.searchBox button, .btnPrimary {
+  border: 1px solid var(--ink); background: var(--ink); color: #fff; border-radius: 8px; padding: 0 14px; min-height: 40px;
+  cursor: pointer; font-weight: 600;
+}
+.searchBox button:hover, .btnPrimary:hover { background: #33404c; }
+
+/* Indicadores */
+.kpiArea { padding-bottom: 16px; }
+.scopeLine { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.88rem; margin-bottom: 10px; }
+.scopeLine #scopeText { font-weight: 600; color: var(--ink2); }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px;
+  display: flex; flex-direction: column; gap: 2px; border-top: 3px solid var(--line);
+}
+.kpiKept { border-top-color: var(--kept); }
+.kpiCand { border-top-color: var(--cand); }
+.kpiLabel { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+.kpiValue { font-size: 1.75rem; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.kpiSub { font-size: 0.8rem; color: var(--muted); }
+
+/* Mapa */
+.mapArea { position: relative; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+#map {
+  height: min(68vh, 720px); min-height: 440px; border-radius: 12px; border: 1px solid var(--line);
+  background: #eef1f0; z-index: 0;
+}
+.mapNotice {
+  position: absolute; left: 50%; transform: translateX(-50%); top: 12px; z-index: 1000; background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 0.82rem; color: var(--ink2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); max-width: min(560px, calc(100% - 260px)); text-align: center;
+}
+.mapHelp { font-size: 0.82rem; margin-top: 8px; }
+.leaflet-container { font-family: var(--font); }
+.mapPanel {
+  background: rgba(255, 255, 255, 0.96); border: 1px solid var(--line); border-radius: 9px; padding: 8px 11px;
+  font-size: 0.82rem; line-height: 1.6; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08); color: var(--ink);
+}
+.mapPanel label { display: flex; align-items: center; gap: 7px; cursor: pointer; white-space: nowrap; }
+.mapPanel .panelTitle { font-weight: 650; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.legendRow { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+.dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; border: 1.5px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.15); flex: none; }
+.dotKept { background: var(--kept); }
+.dotCand { background: var(--cand); }
+.dotGray { background: var(--gray); }
+.legendCount { margin-left: auto; padding-left: 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* Tooltip y popup */
+.leaflet-tooltip.storeTip, .leaflet-popup-content { font-size: 0.82rem; line-height: 1.45; color: var(--ink); }
+.leaflet-tooltip.storeTip { padding: 8px 10px; border-radius: 8px; border-color: var(--line); box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.tipTitle { font-weight: 700; font-size: 0.9rem; margin-bottom: 3px; display: flex; gap: 8px; align-items: center; }
+.tipGrid { display: grid; grid-template-columns: auto auto; gap: 0 12px; }
+.tipGrid span:nth-child(odd) { color: var(--muted); }
+.tipGrid span:nth-child(even) { font-variant-numeric: tabular-nums; }
+.tipFoot { margin-top: 5px; padding-top: 5px; border-top: 1px solid var(--line2); }
+.leaflet-popup-content { margin: 12px 14px; min-width: 220px; }
+.popActions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.popActions button {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 9px; cursor: pointer; font-size: 0.8rem;
+}
+.popActions button:hover { background: var(--line2); }
+.warnText { color: var(--candInk); }
+
+/* Secciones */
+.section { padding-top: 40px; }
+.sectionLead { margin: 4px 0 14px; color: var(--ink2); font-size: 0.92rem; max-width: 90ch; }
+.sectionHead { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; }
+.note { font-size: 0.85rem; color: var(--ink2); max-width: 95ch; }
+.compareGrid { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 16px; }
+.compareGrid .note { margin: 0; padding-top: 6px; }
+.compareGrid .note p { margin: 0 0 10px; }
+.chartBox { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.chartBox figcaption { display: flex; flex-direction: column; font-size: 0.88rem; gap: 2px; }
+.chartBox figcaption .muted { font-size: 0.8rem; }
+.chartLegend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.8rem; color: var(--ink2); margin: 8px 0 2px; }
+.chartLegend span { display: inline-flex; align-items: center; gap: 6px; }
+.swatch { width: 14px; height: 10px; border-radius: 2px; display: inline-block; }
+.swatchKept { background: var(--kept); }
+.swatchTop { background: #fff; border: 1.5px solid var(--ink2); }
+#chart svg { display: block; width: 100%; height: auto; }
+.chartTip {
+  position: fixed; z-index: 2000; pointer-events: none; background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 7px 10px; font-size: 0.8rem; box-shadow: 0 2px 8px rgba(0,0,0,0.12); max-width: 260px;
+}
+.methodGrid, .twoCol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 12px; }
+.methodGrid ol, .methodGrid ul { margin: 0; padding-left: 20px; color: var(--ink2); font-size: 0.92rem; }
+.methodGrid li { margin-bottom: 6px; }
+
+/* Tablas */
+.tableScroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.dataTable { width: 100%; border-collapse: collapse; font-size: 0.86rem; font-variant-numeric: tabular-nums; }
+.dataTable th, .dataTable td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--line2); white-space: nowrap; }
+.dataTable th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); font-weight: 650; background: #fafbfb; position: sticky; top: 0; }
+.dataTable td.num, .dataTable th.num { text-align: right; }
+.dataTable tbody tr:last-child td { border-bottom: 0; }
+.dataTable tr.activeRow td { background: #f3f6f9; font-weight: 600; }
+.dataTable tr.activeRow td:first-child { box-shadow: inset 3px 0 0 var(--ink); }
+.dataTable th.sortable { cursor: pointer; user-select: none; }
+.dataTable th.sortable:hover { color: var(--ink); }
+#compareTable th { white-space: normal; vertical-align: bottom; min-width: 78px; }
+.storesTable tbody tr { cursor: pointer; }
+.storesTable tbody tr:hover td { background: #f7f9fa; }
+#reviewSection .tableScroll { max-height: 520px; overflow-y: auto; }
+.reviewTable td.wrapCell { white-space: normal; min-width: 320px; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
+.badgeKept { background: var(--keptSoft); color: var(--keptInk); }
+.badgeCand { background: var(--candSoft); color: var(--candInk); }
+.badgeGray { background: var(--graySoft); color: var(--ink2); }
+.tableTools { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
+.tableTools input { width: 260px; }
+.pager { display: flex; gap: 8px; align-items: center; justify-content: flex-end; margin-top: 10px; font-size: 0.85rem; }
+.pager button { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 10px; cursor: pointer; min-height: 32px; }
+.pager button:disabled { opacity: 0.4; cursor: default; }
+
+details > summary { cursor: pointer; font-weight: 650; font-size: 1.05rem; padding: 6px 0; }
+details .subDetails { margin-top: 18px; }
+details .subDetails > summary { font-size: 0.92rem; color: var(--ink2); }
+.plainList { list-style: none; padding: 0; margin: 0; font-size: 0.84rem; color: var(--ink2); }
+.plainList li { padding: 3px 0; border-bottom: 1px solid var(--line2); }
+.ok { color: var(--keptInk); font-weight: 650; }
+.fail { color: #b42318; font-weight: 650; }
+.pageFooter { padding-top: 32px; padding-bottom: 40px; font-size: 0.8rem; }
+
+/* Pantallas pequeñas */
+@media (max-width: 900px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .compareGrid, .methodGrid, .twoCol { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .wrap, .mapArea { padding-left: 16px; padding-right: 16px; }
+  .pageHeader { padding-top: 18px; }
+  .lead { font-size: 0.92rem; }
+  .controls { gap: 12px; }
+  .control, .controls form { width: 100%; }
+  .segmented { width: 100%; }
+  .segmented button { flex: 1; padding: 6px 4px; }
+  select, .searchBox, .tableTools input { width: 100%; }
+  .searchBox input { flex: 1; width: auto; }
+  .kpi { padding: 10px 12px; }
+  .kpiValue { font-size: 1.4rem; }
+  #map { height: 62vh; min-height: 360px; }
+  .mapNotice { top: auto; bottom: 34px; max-width: calc(100% - 48px); }
+  .mapPanel { font-size: 0.76rem; padding: 6px 8px; }
+  .leaflet-bottom.leaflet-left .mapPanel { margin-bottom: 30px; }
+  .leaflet-control-attribution { font-size: 9px; }
+}

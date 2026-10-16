@@ -1,0 +1,5 @@
+﻿escenario,radioM,conservadas,candidatas,reduccionPct,volumenConservado,volumenPctElegible,volumenPctTotal,volumenTopN,volumenPctTopN,costoCoberturaPp,distMediaM,distMaxM,asignacionesEntreEstados,asignacionesEstadoIndeterminado
+Sin reducción,0,5972,0,0.0,351631.896,100.0,99.3229,351631.896,100.0,0.0,,,0,0
+500 m,500,3678,2294,38.4126,254471.615,72.3688,71.8787,285750.8738,81.2642,8.8955,300.255,499.8543,0,0
+1 km,1000,2228,3744,62.6926,174624.952,49.6613,49.325,212278.734,60.3696,10.7083,546.8618,999.7645,2,2
+2 km,2000,1338,4634,77.5954,115073.2969,32.7255,32.5039,152511.8088,43.3726,10.6471,976.336,1998.9929,2,2

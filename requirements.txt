@@ -1,0 +1,10 @@
+# Dependencias para regenerar index.html con generar_proyecto.py (Python 3.10+)
+# Versiones probadas: numpy 1.26.4, pandas 2.1.4, geopandas 1.0.1, shapely 2.0.7,
+# pyproj 3.7.2, pyogrio 0.10.0, scikit-learn 1.2.2
+numpy>=1.24,<2
+pandas>=2.0,<3
+geopandas>=0.14,<1.1
+shapely>=2.0,<2.1
+pyproj>=3.6
+pyogrio>=0.7
+scikit-learn>=1.2

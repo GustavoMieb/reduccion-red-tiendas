@@ -1,0 +1,84 @@
+﻿lineaArchivo,id,latitud,longitud,cp,volumen,estado,elegible,problemas
+8,301462919,29.403407,-89.54289,97860,534.10622,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 752.6 km (más cercano: Progreso (Yucatán))
+10,301140850,29.1309455,-111.0214329,83177,495.37369,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 300949956
+148,300949956,29.1309455,-111.0214329,83116,157.08235,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 301140850
+164,301355560,27.917474,-110.920816,85330,153.59901,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 301341309
+202,302089559,,,97370,144.12595,Sin asignar,No,Sin coordenadas
+309,301183653,21.0809151,-86.547301,77539,124.99576,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 20.9 km (más cercano: Benito Juárez (Quintana Roo))
+363,301465998,,,22706,119.60245,Sin asignar,No,Sin coordenadas
+365,301476223,29.043303,-111.000996,99999,119.24631,Sonora,Sí,"CP 99999 corresponde a Zacatecas, pero la coordenada cae en Sonora"
+398,302070040,,,22660,116.2639,Sin asignar,No,Sin coordenadas
+516,301306997,21.00237,-89.72212,97295,107.25894,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301299956
+538,301035303,24.067,-107.789,80177,105.69571,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 38.7 km (más cercano: Culiacán (Sinaloa))
+614,301432781,25.20357,-99.82723,67350,101.28188,Nuevo León,Sí,Coordenada idéntica a otra(s) tienda(s): 301429629
+640,301304076,18.64110237,-91.78488237,24150,99.43432,Campeche,Sí,Coordenada idéntica a otra(s) tienda(s): 301298379
+654,301241226,31.91479,-110.591258,84094,98.8213,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 64.9 km (más cercano: Santa Cruz (Sonora))
+686,302107779,,,31180,97.35167,Sin asignar,No,Sin coordenadas
+699,302086212,,,21323,96.78146,Sin asignar,No,Sin coordenadas
+739,301319802,20.97004,-89.54241,97370,94.72228,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301319692
+780,300069492,32.442189,-114.734277,82458,93.10885,Sonora,Sí,"CP 82458 corresponde a Sinaloa, pero la coordenada cae en Sonora"
+812,301434546,32.51848,-116.9868,21530,91.87561,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301418059
+904,301031248,27.025931,-109.624889,85285,87.96457,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 301030251
+1059,301349040,28841225,-111.966297,83343,82.39182,Sin asignar,No,"Coordenada fuera del rango mundial (lat 28841225, lon -111.966297)"
+1215,301434396,32.489258,-117.083419,22525,77.65042,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301483066
+1332,300922774,24.8192836,-107.4303156,80058,74.45926,Sinaloa,Sí,Coordenada idéntica a otra(s) tienda(s): 300097601
+1342,300096954,25.459593,-107.15187,81460,74.30286,Durango,Sí,"CP 81460 corresponde a Sinaloa, pero la coordenada cae en Durango"
+1371,301275034,25.708057,-100.953394,66650,73.75819,Coahuila de Zaragoza,Sí,"CP 66650 corresponde a Nuevo León, pero la coordenada cae en Coahuila de Zaragoza"
+1419,301095293,21.0989,-86.5514,77500,72.6219,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 20.0 km (más cercano: Isla Mujeres (Quintana Roo))
+1426,301298379,18.64110237,-91.78488237,24155,72.4351,Campeche,Sí,Coordenada idéntica a otra(s) tienda(s): 301304076
+1541,301321757,21.010068,-89.717972,97314,69.82145,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301318094
+1620,301279294,25.231455,-108.45632,81893,68.49195,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 2.4 km (más cercano: Guasave (Sinaloa))
+1624,301035345,24.25,-107.742,80028,68.2868,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 19.5 km (más cercano: Culiacán (Sinaloa))
+1665,301407652,23.720458,-99.183853,66550,67.52131,Tamaulipas,Sí,"CP 66550 corresponde a Nuevo León, pero la coordenada cae en Tamaulipas"
+1808,301073424,21.1024,-86.5456,77500,64.69308,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 20.2 km (más cercano: Isla Mujeres (Quintana Roo))
+1821,301153733,24.065711,-107.460123,80492,64.51331,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 18.5 km (más cercano: Culiacán (Sinaloa))
+1862,301394980,31.023675,-114.832692,83420,63.7806,Baja California,Sí,"CP 83420 corresponde a Sonora, pero la coordenada cae en Baja California"
+1881,301199067,32.261131,-117.003511,22645,63.41608,Sin asignar,Sí,Fuera de los contornos por 306 m (posible costa o límite); contorno más cercano: Playas de Rosarito (Baja California). No se asignó por cercanía
+1945,301191046,32.207411,-117.023481,22707,62.30737,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 6.6 km (más cercano: Playas de Rosarito (Baja California))
+1985,301318094,21.010068,-89.717972,97295,61.49816,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301321757
+1994,301239170,28.814085,-89.463003,97000,61.31609,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 687.6 km (más cercano: Progreso (Yucatán))
+2010,301201897,24.387,-107.723,80180,60.95911,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 5.9 km (más cercano: Culiacán (Sinaloa))
+2082,300097120,25.460175,-106.4147028,81440,59.91335,Durango,Sí,"CP 81440 corresponde a Sinaloa, pero la coordenada cae en Durango"
+2168,301319692,20.97004,-89.54241,97370,58.62041,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301319802
+2365,301271020,32.29026,-117.05015,22606,56.04458,Sin asignar,Sí,Fuera de los contornos por 902 m (posible costa o límite); contorno más cercano: Playas de Rosarito (Baja California). No se asignó por cercanía
+2388,300097601,24.8192836,-107.4303156,80374,55.59468,Sinaloa,Sí,Coordenada idéntica a otra(s) tienda(s): 300922774
+2516,301429629,25.20357,-99.82723,67500,53.6508,Nuevo León,Sí,Coordenada idéntica a otra(s) tienda(s): 301432781
+2571,301366947,32.382591,-117.382591,22706,53.08316,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 10.0 km (más cercano: Tijuana (Baja California))
+2706,301363693,21.094252,0,77560,51.27514,Sin asignar,No,"Coordenada en cero (lat 21.094252, lon 0)"
+2787,301483066,32.489258,-117.083419,22334,50.40364,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301434396
+2959,301299956,21.00237,-89.72212,97314,47.85516,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301306997
+3047,301214470,21.603429,-89.69476,97314,46.57197,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 28.0 km (más cercano: Progreso (Yucatán))
+3083,300091475,31.01185955,-110.2562952,86420,46.14686,Sonora,Sí,"CP 86420 corresponde a Tabasco, pero la coordenada cae en Sonora"
+3241,301442187,32.473092,-116.979021,21452,44.04587,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301435466
+3264,301341661,21.032849,-89.538205,97345,43.78534,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301341758
+3324,301418059,32.51848,-116.9868,22415,42.91001,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301434546
+3417,301290861,32.22083,-117.02906,22707,41.79508,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 5.2 km (más cercano: Playas de Rosarito (Baja California))
+3521,301400904,20.496884,-86.957379,97396,40.30545,Quintana Roo,Sí,"CP 97396 corresponde a Yucatán, pero la coordenada cae en Quintana Roo"
+3659,300842865,25.64890417,-100.1688216,61195,38.70317,Nuevo León,Sí,"CP 61195 corresponde a Michoacán de Ocampo, pero la coordenada cae en Nuevo León"
+3676,300849041,25.78943305,-100.2631139,60612,38.41692,Nuevo León,Sí,"CP 60612 corresponde a Michoacán de Ocampo, pero la coordenada cae en Nuevo León"
+3775,301435466,32.473092,-116.979021,22190,37.29865,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301442187
+3800,301446929,31.889318,-116.593313,22810,36.96726,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301453388
+3812,301310596,25.796765,-100.316662,66056,36.82915,Nuevo León,Sí,Coordenada idéntica a otra(s) tienda(s): 301315050
+3902,301387182,20.98,-89.65,92730,35.58169,Yucatán,Sí,"CP 92730 corresponde a Veracruz de Ignacio de la Llave, pero la coordenada cae en Yucatán"
+3951,301279645,25.73504,-100.189769,66634,34.79811,Nuevo León,Sí,Coordenada idéntica a otra(s) tienda(s): 301292868
+3992,301383779,25.5759,-106.03466,31065,34.22298,Durango,Sí,"CP 31065 corresponde a Chihuahua, pero la coordenada cae en Durango"
+3999,301292868,25.73504,-100.189769,66632,34.13712,Nuevo León,Sí,Coordenada idéntica a otra(s) tienda(s): 301279645
+4216,301212254,24.081,-107.481,80010,31.06724,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 18.2 km (más cercano: Culiacán (Sinaloa))
+4532,301192067,32.300841,-117.043981,22410,26.39404,Sin asignar,Sí,Fuera de los contornos por 53 m (posible costa o límite); contorno más cercano: Playas de Rosarito (Baja California). No se asignó por cercanía
+4805,301239281,24.163,-107.914,80319,21.94598,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 37.1 km (más cercano: Culiacán (Sinaloa))
+4848,301276806,25.689639,-100.435047,66365,21.34867,Nuevo León,Sí,"Coordenada idéntica a otra(s) tienda(s): 301298117, 301298808"
+4928,301298117,25.689639,-100.435047,66170,19.21998,Nuevo León,Sí,"Coordenada idéntica a otra(s) tienda(s): 301276806, 301298808"
+4958,301453388,31.889318,-116.593313,22536,18.54005,Baja California,Sí,Coordenada idéntica a otra(s) tienda(s): 301446929
+5109,301315050,25.796765,-100.316662,64140,14.12521,Nuevo León,Sí,Coordenada idéntica a otra(s) tienda(s): 301310596
+5117,301183934,21.01005,-89.386644,7200,13.87497,Yucatán,Sí,CP con formato no estándar ('7200'); posible cero inicial perdido
+5245,301341758,21.032849,-89.538205,97249,8.5817,Yucatán,Sí,Coordenada idéntica a otra(s) tienda(s): 301341661
+5283,301268132,25.756205,-103.527018,64210,6.59895,Durango,Sí,"CP 64210 corresponde a Nuevo León, pero la coordenada cae en Durango"
+5342,302113890,28.9113,-111.3356,99999,84.23659,Sonora,Sí,"CP 99999 corresponde a Zacatecas, pero la coordenada cae en Sonora"
+5405,301080701,26.874,-109.96,85280,68.14821,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 8.2 km (más cercano: Huatabampo (Sonora))
+5420,301341309,27.917474,-110.920816,85385,65.76213,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 301355560
+5481,300091149,26.823803,-109.649078,85900,56.06992,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 300091304
+5638,301030251,27.025931,-109.624889,85287,41.44403,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 301031248
+5665,300092282,27.339982,-110.99943,85200,39.97238,Sin asignar,No,Ubicación sospechosa: fuera de los contornos de México a 38.8 km (más cercano: San Ignacio Río Muerto (Sonora))
+5838,301298808,25.689639,-100.435047,67196,30.54505,Nuevo León,Sí,"Coordenada idéntica a otra(s) tienda(s): 301276806, 301298117"
+5874,301404612,23.7077358,-99.1641902,66449,28.88483,Tamaulipas,Sí,"CP 66449 corresponde a Nuevo León, pero la coordenada cae en Tamaulipas"
+5918,300091304,26.823803,-109.649078,85994,27.22301,Sonora,Sí,Coordenada idéntica a otra(s) tienda(s): 300091149
